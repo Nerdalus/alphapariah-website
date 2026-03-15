@@ -222,7 +222,6 @@
     }
     .app-card:hover { background: rgba(201,168,76,0.04); }
     .app-icon {
-      font-size: 32px;
       width: 60px;
       height: 60px;
       display: flex;
@@ -232,6 +231,15 @@
       border: 1px solid rgba(201,168,76,0.12);
       border-radius: 14px;
       flex-shrink: 0;
+    }
+    .app-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
     .app-name {
       font-family: 'Cinzel', serif;
@@ -321,9 +329,13 @@
       50%       { opacity: 1; }
     }
     .reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.hidden {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
     }
     .reveal.visible {
       opacity: 1;
@@ -377,32 +389,64 @@
     <span class="section-label reveal">Apps</span>
     <h2 class="section-title reveal">What we've built.</h2>
 
-    <a href="https://nutscan.app" class="app-card reveal" target="_blank" rel="noopener">
-      <div class="app-icon">🔩</div>
+    <!-- TyreScan — FIRST -->
+    <a href="https://tyrescan.app" class="app-card reveal" target="_blank" rel="noopener">
+      <div class="app-icon">
+        <!-- Tyre / circle with tread marks -->
+        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="10"/>
+          <circle cx="14" cy="14" r="5"/>
+          <line x1="14" y1="4" x2="14" y2="9"/>
+          <line x1="14" y1="19" x2="14" y2="24"/>
+          <line x1="4" y1="14" x2="9" y2="14"/>
+          <line x1="19" y1="14" x2="24" y2="14"/>
+          <line x1="7.1" y1="7.1" x2="10.6" y2="10.6"/>
+          <line x1="17.4" y1="17.4" x2="20.9" y2="20.9"/>
+          <line x1="20.9" y1="7.1" x2="17.4" y2="10.6"/>
+          <line x1="10.6" y1="17.4" x2="7.1" y2="20.9"/>
+        </svg>
+      </div>
       <div class="app-info">
-        <div class="app-name">NutScan</div>
-        <div class="app-desc">Our first app. Something every garage needs. Coming soon to Google Play.</div>
+        <div class="app-name">TyreScan</div>
+        <div class="app-desc">Find your vehicle's tyre size and age instantly. Web tool live now — app coming soon to iOS &amp; Android.</div>
+      </div>
+      <span class="app-status status-live">LIVE</span>
+    </a>
+
+    <!-- MOTReminder -->
+    <a href="https://motreminder.app" class="app-card reveal" target="_blank" rel="noopener">
+      <div class="app-icon">
+        <!-- Car / MOT triangle shape -->
+        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="11" width="22" height="11" rx="3"/>
+          <path d="M7 11 L9 5 L19 5 L21 11"/>
+          <circle cx="8.5" cy="22" r="2.5"/>
+          <circle cx="19.5" cy="22" r="2.5"/>
+          <line x1="12" y1="8" x2="16" y2="8"/>
+        </svg>
+      </div>
+      <div class="app-info">
+        <div class="app-name">MOTReminder</div>
+        <div class="app-desc">Look up any UK vehicle's MOT status, history, and advisories by reg plate. Get reminded before your MOT expires.</div>
       </div>
       <span class="app-status status-soon">COMING SOON</span>
     </a>
 
-    <div class="app-card reveal">
-      <div class="app-icon">🛞</div>
+    <!-- NutScan -->
+    <a href="https://nutscan.app" class="app-card reveal" target="_blank" rel="noopener">
+      <div class="app-icon">
+        <!-- Hex nut -->
+        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="14,3 23.5,8.5 23.5,19.5 14,25 4.5,19.5 4.5,8.5"/>
+          <circle cx="14" cy="14" r="4.5"/>
+        </svg>
+      </div>
       <div class="app-info">
-        <div class="app-name">TyreScan</div>
-        <div class="app-desc">In development. Watch this space.</div>
+        <div class="app-name">NutScan</div>
+        <div class="app-desc">Point your camera at any nut or bolt and instantly identify the size, thread, and type. Built for workshops, not guesswork. Coming soon to Google Play.</div>
       </div>
       <span class="app-status status-soon">COMING SOON</span>
-    </div>
-
-    <div class="app-card reveal">
-      <div class="app-icon">🚗</div>
-      <div class="app-info">
-        <div class="app-name">MOTRemind</div>
-        <div class="app-desc">In development. Watch this space.</div>
-      </div>
-      <span class="app-status status-soon">COMING SOON</span>
-    </div>
+    </a>
 
   </section>
 
@@ -420,19 +464,19 @@
     </p>
   </section>
 
- <!-- CONTACT -->
+  <!-- CONTACT -->
   <section class="contact-section">
     <span class="section-label reveal">Contact</span>
     <h2 class="section-title reveal">Get in touch.</h2>
-    <a href="mailto:business@alphapariah.studio" class="contact-email reveal">business@alphapariah.studio</a>
+    <a href="/cdn-cgi/l/email-protection#4b293e3822252e38380b2a273b232a3b2a39222a2365383f3e2f2224" class="contact-email reveal"><span class="__cf_email__" data-cfemail="cfadbabca6a1aabcbc8faea3bfa7aebfaebda6aea7e1bcbbbaaba6a0">[email&#160;protected]</span></a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-text">© 2026 ALPHA PARIAH STUDIOS · WREXHAM, WALES · business@alphapariah.studio</p>
+    <p class="footer-text">© 2026 ALPHA PARIAH STUDIOS · WREXHAM, WALES · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97f5e2e4fef9f2e4e4d7f6fbe7fff6e7f6e5fef6ffb9e4e3e2f3fef8">[email&#160;protected]</a></p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Custom cursor
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
@@ -455,18 +499,4 @@
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
           setTimeout(() => e.target.classList.add('visible'), i * 80);
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Logo parallax
-    const logo = document.getElementById('heroLogo');
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (logo) logo.style.transform = `translateY(${y * 0.15}px)`;
-    });
-  </script>
-</body>
-</html>
+       
