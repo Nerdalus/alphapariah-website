@@ -8,7 +8,7 @@
   <meta name="description" content="Alpha Pariah Studios — independent app studio building precision tools for real people." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0P9R3CN05"></script>
   <script>
@@ -23,10 +23,11 @@
     :root {
       --gold: #c9a84c;
       --gold-bright: #f0cb6a;
-      --gold-dim: #7a6228;
-      --bg: #080602;
-      --text: #e8dfc0;
-      --text-dim: #7a6e58;
+      --gold-dim: #6b5a2e;
+      --bg: #0d0d0d;
+      --bg-card: #111111;
+      --text: #e8e0cc;
+      --text-dim: #6b6455;
     }
 
     html { scroll-behavior: smooth; }
@@ -34,7 +35,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: 'Barlow', sans-serif;
       overflow-x: hidden;
       cursor: none;
     }
@@ -71,6 +72,7 @@
       opacity: 0.4;
     }
 
+    /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -88,51 +90,52 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%);
       pointer-events: none;
     }
     .hero-logo {
-      width: min(320px, 78vw);
-      height: min(320px, 78vw);
+      width: min(280px, 72vw);
+      height: min(280px, 72vw);
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
       opacity: 0;
       animation: fadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-      box-shadow: 0 0 60px rgba(201,168,76,0.25), 0 0 120px rgba(201,168,76,0.1), 0 40px 80px rgba(0,0,0,0.9);
+      box-shadow: 0 0 60px rgba(201,168,76,0.2), 0 0 120px rgba(201,168,76,0.08), 0 40px 80px rgba(0,0,0,0.95);
     }
     .hero-eyebrow {
-      font-family: 'Cinzel', serif;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
       font-size: 10px;
-      letter-spacing: 6px;
+      letter-spacing: 8px;
       color: var(--gold-dim);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       opacity: 0;
       animation: fadeUp 1s ease 0.8s forwards;
     }
     .hero-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(26px, 5.5vw, 48px);
-      font-weight: 900;
-      letter-spacing: 4px;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+      font-size: clamp(28px, 6vw, 56px);
+      font-weight: 400;
+      letter-spacing: 6px;
       color: var(--gold);
-      text-shadow: 0 0 40px rgba(201,168,76,0.4);
-      line-height: 1.1;
-      margin-bottom: 24px;
+      text-shadow: 0 0 40px rgba(201,168,76,0.35);
+      line-height: 1.05;
+      margin-bottom: 22px;
       opacity: 0;
       animation: fadeUp 1s ease 1s forwards;
+      text-transform: uppercase;
     }
     .hero-tagline {
-      font-size: clamp(16px, 2.5vw, 21px);
+      font-size: clamp(15px, 2.2vw, 19px);
       font-weight: 300;
       font-style: italic;
       color: var(--text-dim);
-      letter-spacing: 1px;
-      max-width: 480px;
-      line-height: 1.7;
+      letter-spacing: 0.5px;
+      max-width: 460px;
+      line-height: 1.75;
       opacity: 0;
       animation: fadeUp 1s ease 1.2s forwards;
     }
@@ -157,9 +160,9 @@
       animation: fadeIn 1s ease 2s forwards;
     }
     .scroll-hint span {
-      font-family: 'Cinzel', serif;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
       font-size: 9px;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       color: var(--gold-dim);
     }
     .scroll-line {
@@ -169,73 +172,77 @@
       animation: scrollPulse 2s ease-in-out infinite;
     }
 
+    /* ─── SECTIONS ─── */
     section {
       padding: 100px 24px;
-      max-width: 880px;
+      max-width: 860px;
       margin: 0 auto;
     }
     .section-label {
-      font-family: 'Cinzel', serif;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
       font-size: 9px;
-      letter-spacing: 6px;
+      letter-spacing: 7px;
       color: var(--gold-dim);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: block;
     }
     .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(22px, 4vw, 34px);
-      font-weight: 600;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+      font-size: clamp(24px, 4.5vw, 40px);
+      font-weight: 400;
       color: var(--gold);
       margin-bottom: 32px;
-      line-height: 1.2;
+      line-height: 1.1;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .about-text {
-      font-size: clamp(17px, 2vw, 20px);
+      font-size: clamp(16px, 1.9vw, 19px);
       font-weight: 300;
-      line-height: 1.95;
+      line-height: 1.9;
       color: var(--text-dim);
-      max-width: 640px;
+      max-width: 620px;
     }
     .about-text strong {
       color: var(--text);
-      font-weight: 400;
+      font-weight: 600;
     }
 
-    .apps-section { border-top: 1px solid rgba(201,168,76,0.1); }
+    /* ─── APP CARDS ─── */
+    .apps-section { border-top: 1px solid rgba(201,168,76,0.08); }
 
     .app-card {
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
       gap: 24px;
-      padding: 32px 16px;
-      border-bottom: 1px solid rgba(201,168,76,0.08);
+      padding: 28px 16px;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
       text-decoration: none;
       color: inherit;
       position: relative;
-      transition: background 0.3s ease;
-      border-radius: 4px;
+      transition: background 0.25s ease;
+      border-radius: 6px;
       margin: 0 -16px;
     }
-    .app-card:hover { background: rgba(201,168,76,0.04); }
+    .app-card:hover { background: rgba(201,168,76,0.035); }
 
     .app-icon {
-      width: 60px;
-      height: 60px;
+      width: 56px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(201,168,76,0.05);
-      border: 1px solid rgba(201,168,76,0.12);
-      border-radius: 14px;
+      background: rgba(201,168,76,0.04);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 12px;
       flex-shrink: 0;
     }
     .app-icon svg {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       stroke: var(--gold);
       fill: none;
       stroke-width: 1.5;
@@ -243,42 +250,45 @@
       stroke-linejoin: round;
     }
     .app-name {
-      font-family: 'Cinzel', serif;
-      font-size: 17px;
-      font-weight: 600;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
       color: var(--text);
       margin-bottom: 6px;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
     .app-desc {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 300;
       color: var(--text-dim);
-      line-height: 1.5;
+      line-height: 1.55;
     }
     .app-status {
-      font-family: 'Cinzel', serif;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
       font-size: 8px;
       letter-spacing: 3px;
-      padding: 6px 12px;
-      border-radius: 4px;
+      padding: 5px 11px;
+      border-radius: 3px;
       white-space: nowrap;
       flex-shrink: 0;
+      text-transform: uppercase;
     }
     .status-live {
       color: var(--gold);
       border: 1px solid var(--gold-dim);
-      background: rgba(201,168,76,0.08);
+      background: rgba(201,168,76,0.07);
     }
     .status-soon {
       color: var(--text-dim);
-      border: 1px solid rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.1);
     }
 
-    .vision-section { border-top: 1px solid rgba(201,168,76,0.1); }
+    /* ─── VISION & CONTACT ─── */
+    .vision-section { border-top: 1px solid rgba(201,168,76,0.08); }
 
     .contact-section {
-      border-top: 1px solid rgba(201,168,76,0.1);
+      border-top: 1px solid rgba(201,168,76,0.08);
       text-align: center;
     }
     .contact-section .section-label,
@@ -286,32 +296,36 @@
 
     .contact-email {
       display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: clamp(13px, 2.2vw, 17px);
-      letter-spacing: 3px;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+      font-size: clamp(13px, 2vw, 16px);
+      letter-spacing: 4px;
       color: var(--gold);
       text-decoration: none;
       border-bottom: 1px solid var(--gold-dim);
       padding-bottom: 4px;
-      transition: color 0.3s ease, border-color 0.3s ease;
+      transition: color 0.25s ease, border-color 0.25s ease;
+      text-transform: uppercase;
     }
     .contact-email:hover {
       color: var(--gold-bright);
       border-color: var(--gold-bright);
     }
 
+    /* ─── FOOTER ─── */
     footer {
-      border-top: 1px solid rgba(201,168,76,0.08);
+      border-top: 1px solid rgba(201,168,76,0.06);
       padding: 40px 24px;
       text-align: center;
     }
     .footer-text {
-      font-family: 'Cinzel', serif;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
       font-size: 9px;
       letter-spacing: 4px;
       color: var(--gold-dim);
+      text-transform: uppercase;
     }
 
+    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -339,6 +353,7 @@
       transform: translateY(0);
     }
 
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 580px) {
       .app-card {
         grid-template-columns: auto 1fr;
@@ -361,11 +376,11 @@
   <div class="hero">
     <img src="ALPHA_PARIAH_STUDIOS.png" alt="Alpha Pariah Studios" class="hero-logo" id="heroLogo" />
     <p class="hero-eyebrow">Independent App Studio</p>
-    <h1 class="hero-title">ALPHA PARIAH STUDIOS</h1>
+    <h1 class="hero-title">Alpha Pariah Studios</h1>
     <p class="hero-tagline">Precision tools for real people.<br>Built by one. Used by many.</p>
     <div class="hero-divider"></div>
     <div class="scroll-hint">
-      <span>SCROLL</span>
+      <span>Scroll</span>
       <div class="scroll-line"></div>
     </div>
   </div>
@@ -385,6 +400,38 @@
   <section class="apps-section">
     <span class="section-label reveal">Apps</span>
     <h2 class="section-title reveal">What we've built.</h2>
+
+    <!-- MOTReminder -->
+    <a href="https://motreminder.app" class="app-card reveal" target="_blank" rel="noopener">
+      <div class="app-icon">
+        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="11" width="22" height="11" rx="3"/>
+          <path d="M7 11 L9 5 L19 5 L21 11"/>
+          <circle cx="8.5" cy="22" r="2.5"/>
+          <circle cx="19.5" cy="22" r="2.5"/>
+          <line x1="12" y1="8" x2="16" y2="8"/>
+        </svg>
+      </div>
+      <div class="app-info">
+        <div class="app-name">MOTReminder</div>
+        <div class="app-desc">Look up any UK vehicle's MOT status, history, and advisories by reg plate. Get reminded before your MOT expires.</div>
+      </div>
+      <span class="app-status status-live">Live</span>
+    </a>
+
+    <!-- EVChargeSpot -->
+    <a href="https://evchargespot.co.uk" class="app-card reveal" target="_blank" rel="noopener">
+      <div class="app-icon">
+        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 3 L6 14 L13 14 L10 25 L22 11 L15 11 L20 3 Z"/>
+        </svg>
+      </div>
+      <div class="app-info">
+        <div class="app-name">EVChargeSpot</div>
+        <div class="app-desc">Find EV charging stations near you across the UK. Live status, connector types, and speeds at a glance.</div>
+      </div>
+      <span class="app-status status-live">Live</span>
+    </a>
 
     <!-- TyreScan -->
     <a href="https://tyrescan.app" class="app-card reveal" target="_blank" rel="noopener">
@@ -406,25 +453,7 @@
         <div class="app-name">TyreScan</div>
         <div class="app-desc">Find your vehicle's tyre size and age instantly. Web tool live now — app coming soon to iOS &amp; Android.</div>
       </div>
-      <span class="app-status status-live">LIVE</span>
-    </a>
-
-    <!-- MOTReminder -->
-    <a href="https://motreminder.app" class="app-card reveal" target="_blank" rel="noopener">
-      <div class="app-icon">
-        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="11" width="22" height="11" rx="3"/>
-          <path d="M7 11 L9 5 L19 5 L21 11"/>
-          <circle cx="8.5" cy="22" r="2.5"/>
-          <circle cx="19.5" cy="22" r="2.5"/>
-          <line x1="12" y1="8" x2="16" y2="8"/>
-        </svg>
-      </div>
-      <div class="app-info">
-        <div class="app-name">MOTReminder</div>
-        <div class="app-desc">Look up any UK vehicle's MOT status, history, and advisories by reg plate. Get reminded before your MOT expires.</div>
-      </div>
-      <span class="app-status status-soon">COMING SOON</span>
+      <span class="app-status status-live">Live</span>
     </a>
 
     <!-- NutScan -->
@@ -439,7 +468,7 @@
         <div class="app-name">NutScan</div>
         <div class="app-desc">Point your camera at any nut or bolt and instantly identify the size, thread, and type. Built for workshops, not guesswork. Coming soon to Google Play.</div>
       </div>
-      <span class="app-status status-soon">COMING SOON</span>
+      <span class="app-status status-soon">Coming Soon</span>
     </a>
 
   </section>
@@ -447,14 +476,9 @@
   <!-- VISION -->
   <section class="vision-section">
     <span class="section-label reveal">Vision</span>
-    <h2 class="section-title reveal">We build for the garage, not the boardroom.</h2>
+    <h2 class="section-title reveal">Just getting started.</h2>
     <p class="about-text reveal">
-      Independent garages run on skill, not software. But the paperwork, the reminders, the part numbers,
-      the tyre sizes scribbled on Post-it notes — that's time stolen from the work that actually pays.
-    </p>
-    <p class="about-text reveal" style="margin-top: 24px;">
-      Alpha Pariah Studios builds simple, accurate tools that handle the small stuff automatically.
-      No training required. No bloat. Just open it, use it, get back to work.
+      MOT reminders. EV charge points. Tyre safety. These are just the start. We're building a growing suite of free tools for UK motorists — accurate, no-nonsense, and always free to use.
     </p>
   </section>
 
@@ -467,11 +491,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-text">&#169; 2026 ALPHA PARIAH STUDIOS &middot; WREXHAM, WALES &middot; <a id="footer-link" style="color:var(--gold-dim);text-decoration:none;"></a></p>
+    <p class="footer-text">&#169; 2026 Alpha Pariah Studios &middot; Wrexham, Wales &middot; <a id="footer-link" style="color:var(--gold-dim);text-decoration:none;"></a></p>
   </footer>
 
   <script>
-    // Assemble email via JS — prevents Cloudflare/Namecheap obfuscation
+    // Assemble email via JS — prevents scraping
     (function() {
       var u = 'business';
       var d = 'alphapariah' + '.' + 'studio';
