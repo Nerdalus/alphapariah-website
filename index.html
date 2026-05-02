@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alpha Pariah Studios</title>
   <link rel="icon" type="image/png" href="ALPHA_PARIAH_STUDIOS.png" />
-  <meta name="description" content="Alpha Pariah Studios — independent app studio building precision tools for real people." />
+  <meta name="description" content="Alpha Pariah Studios. Independent software house. Wrexham, Wales." />
   <link rel="canonical" href="https://alphapariah.studio/" />
   <meta name="robots" content="noindex, follow" />
- <meta property="og:title" content="Alpha Pariah Studios" />
-<meta property="og:description" content="Alpha Pariah Studios — independent app studio building precision tools for real people." />
-<meta property="og:url" content="https://alphapariah.studio/" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://alphapariah.studio/ALPHA_PARIAH_STUDIOS.png" />
+  <meta property="og:title" content="Alpha Pariah Studios" />
+  <meta property="og:description" content="Alpha Pariah Studios. Independent software house. Wrexham, Wales." />
+  <meta property="og:url" content="https://alphapariah.studio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://alphapariah.studio/ALPHA_PARIAH_STUDIOS.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
-  <!-- Google tag (gtag.js) -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap" rel="stylesheet" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0P9R3CN05"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -29,531 +28,58 @@
 
     :root {
       --gold: #c9a84c;
-      --gold-bright: #f0cb6a;
       --gold-dim: #6b5a2e;
-      --bg: #0d0d0d;
-      --bg-card: #111111;
-      --text: #e8e0cc;
-      --text-dim: #6b6455;
+      --bg: #000;
     }
 
-    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
 
     body {
       background: var(--bg);
-      color: var(--text);
+      color: var(--gold);
       font-family: 'Barlow', sans-serif;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    .cursor {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      mix-blend-mode: screen;
-    }
-    .cursor-ring {
-      position: fixed;
-      width: 32px;
-      height: 32px;
-      border: 1px solid var(--gold-dim);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.4;
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative;
-      padding: 60px 24px;
       text-align: center;
+      padding: 24px;
       overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-logo {
-      width: min(280px, 72vw);
-      height: min(280px, 72vw);
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 44px;
+
+    h1 {
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+      font-size: clamp(30px, 6.5vw, 64px);
+      font-weight: 400;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      text-shadow: 0 0 40px rgba(201, 168, 76, 0.35);
+      margin-bottom: 32px;
       opacity: 0;
       animation: fadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-      box-shadow: 0 0 60px rgba(201,168,76,0.2), 0 0 120px rgba(201,168,76,0.08), 0 40px 80px rgba(0,0,0,0.95);
     }
-    .hero-eyebrow {
+
+    p {
       font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 8px;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.8s forwards;
-    }
-    .hero-title {
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: clamp(28px, 6vw, 56px);
+      font-size: clamp(11px, 1.4vw, 14px);
       font-weight: 400;
       letter-spacing: 6px;
-      color: var(--gold);
-      text-shadow: 0 0 40px rgba(201,168,76,0.35);
-      line-height: 1.05;
-      margin-bottom: 22px;
-      opacity: 0;
-      animation: fadeUp 1s ease 1s forwards;
       text-transform: uppercase;
-    }
-    .hero-tagline {
-      font-size: clamp(15px, 2.2vw, 19px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--text-dim);
-      letter-spacing: 0.5px;
-      max-width: 460px;
-      line-height: 1.75;
-      opacity: 0;
-      animation: fadeUp 1s ease 1.2s forwards;
-    }
-    .hero-divider {
-      width: 80px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-      margin: 40px auto 0;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.4s forwards;
-    }
-    .scroll-hint {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeIn 1s ease 2s forwards;
-    }
-    .scroll-hint span {
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: 9px;
-      letter-spacing: 5px;
       color: var(--gold-dim);
-    }
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--gold-dim), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
+      max-width: 720px;
+      line-height: 2;
+      opacity: 0;
+      animation: fadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
     }
 
-    /* ─── SECTIONS ─── */
-    section {
-      padding: 100px 24px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .section-label {
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: 9px;
-      letter-spacing: 7px;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      display: block;
-    }
-    .section-title {
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: clamp(24px, 4.5vw, 40px);
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 32px;
-      line-height: 1.1;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .about-text {
-      font-size: clamp(16px, 1.9vw, 19px);
-      font-weight: 300;
-      line-height: 1.9;
-      color: var(--text-dim);
-      max-width: 620px;
-    }
-    .about-text strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    /* ─── APP CARDS ─── */
-    .apps-section { border-top: 1px solid rgba(201,168,76,0.08); }
-
-    .app-card {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 24px;
-      padding: 28px 16px;
-      border-bottom: 1px solid rgba(201,168,76,0.06);
-      text-decoration: none;
-      color: inherit;
-      position: relative;
-      transition: background 0.25s ease;
-      border-radius: 6px;
-      margin: 0 -16px;
-    }
-    .app-card:hover { background: rgba(201,168,76,0.035); }
-
-    .app-icon {
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(201,168,76,0.04);
-      border: 1px solid rgba(201,168,76,0.1);
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-    .app-icon svg {
-      width: 26px;
-      height: 26px;
-      stroke: var(--gold);
-      fill: none;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .app-name {
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 6px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .app-desc {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--text-dim);
-      line-height: 1.55;
-    }
-    .app-status {
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: 8px;
-      letter-spacing: 3px;
-      padding: 5px 11px;
-      border-radius: 3px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      text-transform: uppercase;
-    }
-    .status-live {
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      background: rgba(201,168,76,0.07);
-    }
-    .status-soon {
-      color: var(--text-dim);
-      border: 1px solid rgba(201,168,76,0.1);
-    }
-
-    /* ─── VISION & CONTACT ─── */
-    .vision-section { border-top: 1px solid rgba(201,168,76,0.08); }
-
-    .contact-section {
-      border-top: 1px solid rgba(201,168,76,0.08);
-      text-align: center;
-    }
-    .contact-section .section-label,
-    .contact-section .section-title { text-align: center; }
-
-    .contact-email {
-      display: inline-block;
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: clamp(13px, 2vw, 16px);
-      letter-spacing: 4px;
-      color: var(--gold);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-dim);
-      padding-bottom: 4px;
-      transition: color 0.25s ease, border-color 0.25s ease;
-      text-transform: uppercase;
-    }
-    .contact-email:hover {
-      color: var(--gold-bright);
-      border-color: var(--gold-bright);
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      border-top: 1px solid rgba(201,168,76,0.06);
-      padding: 40px 24px;
-      text-align: center;
-    }
-    .footer-text {
-      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
-      font-size: 9px;
-      letter-spacing: 4px;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-    }
-
-    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
+      from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; }
-      50%       { opacity: 1; }
-    }
-
-    .reveal {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-    }
-    .reveal.hidden {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 580px) {
-      .app-card {
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-        gap: 16px;
-      }
-      .app-status {
-        grid-column: 2;
-        justify-self: start;
-      }
     }
   </style>
 </head>
 <body>
-
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- HERO -->
-  <div class="hero">
-    <img src="ALPHA_PARIAH_STUDIOS.png" alt="Alpha Pariah Studios" class="hero-logo" id="heroLogo" />
-    <p class="hero-eyebrow">Independent Software Studio</p>
-    <h1 class="hero-title">Alpha Pariah Studios</h1>
-    <p class="hero-tagline">Keeping UK drivers informed, legal, and safe.
-No subscriptions. No nonsense. Just useful.
-</p>
-    <div class="hero-divider"></div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section>
-    <span class="section-label reveal">About</span>
-    <h2 class="section-title reveal">Built different.</h2>
-    <p class="about-text reveal">
-      Alpha Pariah Studios is an independent software studio based in <strong>Wrexham, Wales</strong>.
-      We build free, accurate tools for UK motorists — whether you're a daily driver or running a fleet.
-      No bloat, no subscriptions, no nonsense. Just tools that work.
-    </p>
-  </section>
-
-  <!-- APPS -->
-  <section class="apps-section">
-    <span class="section-label reveal">Apps</span>
-    <h2 class="section-title reveal">What we've built.</h2>
-
-    <!-- MOTReminder -->
-    <a href="https://www.motreminder.app" class="app-card reveal" target="_blank" rel="noopener noreferrer nofollow">
-      <div class="app-icon">
-        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="11" width="22" height="11" rx="3"/>
-          <path d="M7 11 L9 5 L19 5 L21 11"/>
-          <circle cx="8.5" cy="22" r="2.5"/>
-          <circle cx="19.5" cy="22" r="2.5"/>
-          <line x1="12" y1="8" x2="16" y2="8"/>
-        </svg>
-      </div>
-      <div class="app-info">
-        <div class="app-name">MOTReminder</div>
-        <div class="app-desc">Look up any UK vehicle's MOT status, history, and advisories by reg plate. Get reminded before your MOT expires.</div>
-      </div>
-      <span class="app-status status-live">Live</span>
-    </a>
-
-    <!-- EVChargeSpot -->
-    <a href="https://www.evchargespot.co.uk" class="app-card reveal" target="_blank" rel="noopener noreferrer nofollow">
-      <div class="app-icon">
-        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 3 L6 14 L13 14 L10 25 L22 11 L15 11 L20 3 Z"/>
-        </svg>
-      </div>
-      <div class="app-info">
-        <div class="app-name">EVChargeSpot</div>
-        <div class="app-desc">Find EV charging stations near you across the UK. Live status, connector types, and speeds at a glance.</div>
-      </div>
-      <span class="app-status status-live">Live</span>
-    </a>
-
-    <!-- TyreScan -->
-    <a href="https://www.tyrescan.app" class="app-card reveal" target="_blank" rel="noopener noreferrer nofollow">
-      <div class="app-icon">
-        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="14" cy="14" r="10"/>
-          <circle cx="14" cy="14" r="5"/>
-          <line x1="14" y1="4" x2="14" y2="9"/>
-          <line x1="14" y1="19" x2="14" y2="24"/>
-          <line x1="4" y1="14" x2="9" y2="14"/>
-          <line x1="19" y1="14" x2="24" y2="14"/>
-          <line x1="7.1" y1="7.1" x2="10.6" y2="10.6"/>
-          <line x1="17.4" y1="17.4" x2="20.9" y2="20.9"/>
-          <line x1="20.9" y1="7.1" x2="17.4" y2="10.6"/>
-          <line x1="10.6" y1="17.4" x2="7.1" y2="20.9"/>
-        </svg>
-      </div>
-      <div class="app-info">
-        <div class="app-name">TyreScan</div>
-        <div class="app-desc">Find your vehicle's tyre size and age instantly. Web tool live now — app coming soon to iOS &amp; Android.</div>
-      </div>
-      <span class="app-status status-live">Live</span>
-    </a>
-
-    <!-- CarRecall -->
-    <a href="https://www.carrecall.app" class="app-card reveal" target="_blank" rel="noopener noreferrer nofollow">
-      <div class="app-icon">
-        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 3 L25 9 L25 21 L14 25 L3 21 L3 9 Z"/>
-          <path d="M14 8 L14 15"/>
-          <circle cx="14" cy="19" r="1.5" fill="currentColor" stroke="none" style="fill:var(--gold)"/>
-        </svg>
-      </div>
-      <div class="app-info">
-        <div class="app-name">CarRecall</div>
-        <div class="app-desc">Know the moment your car has a safety recall. Enter your reg and we'll monitor the official DVSA database and alert you instantly — for free.</div>
-      </div>
-      <span class="app-status status-live">Live</span>
-    </a>
-
-  </section>
-
-  <!-- VISION -->
-  <section class="vision-section">
-    <span class="section-label reveal">Vision</span>
-    <h2 class="section-title reveal">Just getting started.</h2>
-    <p class="about-text reveal">
-      MOT reminders. EV charge points. Tyre safety. These are just the start. We're building a growing suite of free tools for UK motorists — accurate, no-nonsense, and always free to use.
-    </p>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section">
-    <span class="section-label reveal">Contact</span>
-    <h2 class="section-title reveal">Get in touch.</h2>
-    <a id="contact-link" class="contact-email reveal"></a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p class="footer-text">&#169; 2026 Alpha Pariah Studios &middot; Wrexham, Wales &middot; <a id="footer-link" style="color:var(--gold-dim);text-decoration:none;"></a></p>
-  </footer>
-
-  <script>
-    // Assemble email via JS — prevents scraping
-    (function() {
-      var u = 'business';
-      var d = 'alphapariah' + '.' + 'studio';
-      var e = u + '\u0040' + d;
-      var c = document.getElementById('contact-link');
-      var f = document.getElementById('footer-link');
-      if (c) { c.href = 'mai' + 'lto:' + e; c.textContent = e; }
-      if (f) { f.href = 'mai' + 'lto:' + e; f.textContent = e; }
-    })();
-
-    // Custom cursor
-    var cursor = document.getElementById('cursor');
-    var ring = document.getElementById('cursorRing');
-    var mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; });
-    function animCursor() {
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animCursor);
-    }
-    animCursor();
-
-    // Scroll reveal
-    var reveals = document.querySelectorAll('.reveal');
-    reveals.forEach(function(el) { el.classList.add('hidden'); });
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e, i) {
-        if (e.isIntersecting) {
-          setTimeout(function() {
-            e.target.classList.remove('hidden');
-            e.target.classList.add('visible');
-          }, i * 80);
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(function(el) { observer.observe(el); });
-
-    // Logo parallax
-    var logo = document.getElementById('heroLogo');
-    window.addEventListener('scroll', function() {
-      var y = window.scrollY;
-      if (logo) logo.style.transform = 'translateY(' + (y * 0.15) + 'px)';
-    });
-  </script>
+  <h1>Alpha Pariah Studios</h1>
+  <p>Independent software house. Built for the long game.</p>
 </body>
 </html>
